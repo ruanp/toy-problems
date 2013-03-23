@@ -19,6 +19,12 @@
 //   http://www.degraeve.com/reference/urlencoding.php
 //
 
-
+//Converts entire string into HTML escape codes
 var htmlEscaper = function(string) {
+  var result = [];
+  for (i = 0; i < string.length; i++) {
+    result[i] = "%" + string.charCodeAt(i);
+  }
+  return result.join('');
 };
+

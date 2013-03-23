@@ -28,12 +28,25 @@
 // Creates an instance of bubbleSort. Example usage:
 // var bubbleSort = createBubbleSort();
 // bubbleSort([2, 1, 3]); // yields [1, 2, 3]
-var createBubbleSort = function(array) {
+var makeBubbleSort = function(array) {
   // Your code goes here. Feel free to add helper functions if needed.
-
   var bubbleSort = function(array) {
     // Moar code here plz
+    if (Array.isArray(array) === false) throw new Error('Only plays with arrays');
+    var iDidJack = false;
+    var arraylength = array.length;
+    if (arraylength === 0) return [];
+    for (var i = 0; i < arraylength - 1; i++) {
+      var ref = array[i+1];
+      if (array[i] > ref) {
+        array[i+1] = array[i];
+        array[i] = ref;
+        if (!iDidJack) iDidJack = true;
+      }
+    }
+    return (iDidJack) ? 
+    bubbleSort(array.slice(0,-1)).concat(array.slice(-1)) :
+    array;
   };
-
   return bubbleSort;
 };

@@ -9,13 +9,48 @@
 // Terror mode: Re-implement all three functions using only bitwise operators.
 
 var multiply = function(x, y) {
-  // Your code goes here
+  // Does not handle:
+  // 1. Negative numbers
+  // 2. Decimal numbers where both numbers are decimal
+  var factor = ( !(x < 0) ^ !(y > 0)) ? -1 : 1
+    );
+  var solution = 0;
+  if (x > y) {
+    for (i = 0; i < x; i++) {
+      solution = solution + y;
+    } 
+  } else {
+    for (i = 0; i < y; i++) {
+      solution = solution + x;
+    }
+  }
+  return solution;
 };
 
 var divide = function(x, y) {
-  // Your code goes here
+  // Handles only non-negative integer inputs
+  var solution = 0;
+  var numerator = x;
+  while (numerator >= y) {
+    numerator = numerator - y;
+    solution++;
+  }
+  var decpiece = 0;
+  while () {
+
+  }
+  solution = solution;
+  return solution;
 };
 
 var modulo = function(x, y) {
   // Your code goes here
+  var solution = 0;
+  var numerator = x;
+  while (numerator >= y) {
+    numerator = numerator - y;
+    solution++;
+  }
+  return numerator;
 };
+

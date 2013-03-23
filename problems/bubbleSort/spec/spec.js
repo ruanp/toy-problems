@@ -2,7 +2,7 @@ describe('bubbleSort', function() {
   var bubbleSort;
 
   before(function() {
-    bubbleSort = createBubbleSort();
+    bubbleSort = makeBubbleSort();
   });
 
   it('should be a function', function() {

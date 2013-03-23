@@ -22,13 +22,25 @@
 var createGradient = function(elementId, stops) {
   var gradient = {};
   gradient._stops = stops || [];
-  gradient._element = $('#' + elementId);
+  gradient._$element = $('#' + elementId);
 
   // Creates the gradient out of a list of stops and appends it to the stage.
   // Returns the completed element.
   gradient.draw = function() {
     // Your code here.
+    for (var i = stops[0]; i <= stops[1]; i++) {
+      gradient.makeDiv(i);
+    }
+
+
+
   };
 
+  gradient.makeDiv = function(color) {
+    var colorString = "rgb(" + color + ", " + color + ", " + color + ")";
+    var height = parseInt(gradient._$element.css('height')) / (stops[1] - stops[0]);
+    var colorDiv = '<div style="background-color:' + colorString +'; height: ' + height + 'px;"></div>';
+    gradient._$element.append(colorDiv);
+  }
   return gradient;
 };
