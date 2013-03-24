@@ -7,5 +7,6 @@
  */
 
 var emailValidator = function(address) {
-  // Your code here
+  var myRE = /^([a-z0-9\!\#\$\%\&\'\*\+\-\/\=\?\^\_\`\{\|\}\~\.]+|(\\"[.\s]\\"))+@\[?[a-z0-9\-\.\:]*\]?$/i
+  return address.match(myRE);
 };
