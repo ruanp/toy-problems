@@ -14,6 +14,9 @@
  *
 */
 
-Function.prototype.bind = function() {
-  // Your code here
+Function.prototype.bind = function(context) {
+  origFunc = this;
+  return function() {
+  	origFunc.call(context);
+  };
 };
